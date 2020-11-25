@@ -21,17 +21,16 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
  * @author awarsyle
  */
 @Entity
 @Table(name = "note")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Note.findAll", query = "SELECT n FROM Note n")
-    , @NamedQuery(name = "Note.findByNoteId", query = "SELECT n FROM Note n WHERE n.noteId = :noteId")
-    , @NamedQuery(name = "Note.findByTitle", query = "SELECT n FROM Note n WHERE n.title = :title")
-    , @NamedQuery(name = "Note.findByContents", query = "SELECT n FROM Note n WHERE n.contents = :contents")})
+        @NamedQuery(name = "Note.findAll", query = "SELECT n FROM Note n")
+        , @NamedQuery(name = "Note.findByNoteId", query = "SELECT n FROM Note n WHERE n.noteId = :noteId")
+        , @NamedQuery(name = "Note.findByTitle", query = "SELECT n FROM Note n WHERE n.title = :title")
+        , @NamedQuery(name = "Note.findByContents", query = "SELECT n FROM Note n WHERE n.contents = :contents")})
 public class Note implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -119,5 +118,5 @@ public class Note implements Serializable {
     public String toString() {
         return "models.Note[ noteId=" + noteId + " ]";
     }
-    
+
 }
