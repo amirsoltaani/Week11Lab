@@ -51,7 +51,7 @@ public class AccountService {
 
         if (user != null) {
             String to = user.getEmail();
-            String template = path + "/emailtemplates/forgotemail.html";
+            String template = path + "/emailtemplates/forgot.html";
             HashMap<String, String> tags = new HashMap<>();
             tags.put("firstname", user.getFirstName());
             tags.put("lastname", user.getLastName());
@@ -59,7 +59,7 @@ public class AccountService {
             tags.put("password", user.getPassword());
 
             try {
-                GmailService.sendMail(to, subject, template, true);
+                GmailService.sendMail(to, subject, template, tags);
                 return true;
             } catch (Exception e) {
                 Logger.getLogger(AccountService.class.getName()).log(Level.SEVERE, null, e);
